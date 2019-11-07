@@ -14,4 +14,11 @@ The lose condition is letting the ball fall off of the screen three times, as th
 
 There is no win condition (Muahahahahaha)
 
+The background image is from https://www.pexels.com/photo/gray-and-brown-cave-near-on-the-ocean-758524/
+and is under the creative commons license
+the creator can be found at https://www.pexels.com/@robin-250363
+
+The background music was made by me. It took way longer to do than it should've. :P
+
+
 Enjoy!
