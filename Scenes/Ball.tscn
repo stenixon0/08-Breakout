@@ -3,17 +3,17 @@
 [ext_resource path="res://Scripts/ball.gd" type="Script" id=1]
 [ext_resource path="res://Assets/ball.png" type="Texture" id=2]
 
-[sub_resource type="PhysicsMaterial" id=2]
+[sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
 bounce = 1.0
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=2]
 radius = 12.018
 
 [node name="Ball" type="RigidBody2D"]
 position = Vector2( 512, 480 )
 mode = 2
-physics_material_override = SubResource( 2 )
+physics_material_override = SubResource( 1 )
 gravity_scale = 0.0
 linear_velocity = Vector2( 200, -200 )
 linear_damp = 0.0
@@ -27,4 +27,4 @@ __meta__ = {
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 3 )
+shape = SubResource( 2 )

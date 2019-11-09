@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/World.gd" type="Script" id=1]
 [ext_resource path="res://Assets/gray-and-brown-cave-near-on-the-ocean-758524.jpg" type="Texture" id=2]
@@ -13,26 +13,6 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 53.311, 12.2888 )
-
-[sub_resource type="Curve" id=4]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.154882, 0.176125 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=5]
-curve = SubResource( 4 )
-
-[sub_resource type="ParticlesMaterial" id=6]
-emission_shape = 1
-emission_sphere_radius = 5.0
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 500.0
-angular_velocity = 0.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 15.0
-scale_random = 0.6
-scale_curve = SubResource( 5 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 18
@@ -69,21 +49,14 @@ shape = SubResource( 1 )
 
 [node name="Ball" parent="." instance=ExtResource( 5 )]
 
-[node name="Particles2D" type="Particles2D" parent="Ball"]
-amount = 10
-explosiveness = 1.0
-process_material = SubResource( 6 )
-
 [node name="Wall" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
 polygon = PoolVector2Array( 0, 640, 0, 0, 1024, 0, 1024, 640, 1088, 640, 1088, -64, -64, -64, -64, 640, 0, 640 )
 
 [node name="Tiles" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Gray Tiles" type="Node2D" parent="Tiles"]
-editor/display_folded = true
 position = Vector2( 12, -96 )
 
 [node name="Tile" parent="Tiles/Gray Tiles" instance=ExtResource( 6 )]

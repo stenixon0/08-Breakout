@@ -14,11 +14,27 @@ The lose condition is letting the ball fall off of the screen three times, as th
 
 There is no win condition (Muahahahahaha)
 
+# POST-JUICE ADDITIONS
+
 The background image is from https://www.pexels.com/photo/gray-and-brown-cave-near-on-the-ocean-758524/
 and is under the creative commons license
 the creator can be found at https://www.pexels.com/@robin-250363
 
 The background music was made by me. It took way longer to do than it should've. :P
 
+The particle effects were made by me, They also took wayyyyyyy longer to do than they should've.
+I adapted a script from Godot 3.0 - Know Your Nodes: Particles2D. It is under the MIT License.
+The function that I adapted helped the particle instances delete themselves after completing.
+
+The original video can be found at https://www.youtube.com/watch?v=awBfTnmgn7k
+The original repository can be found at https://github.com/kidscancode/godot3_particles2d_demo
+
+Adapted Explosion.gd _ready() function https://github.com/kidscancode/godot3_particles2d_demo/blob/master/Explosion.gd
+reproduced here: 
+func _ready():
+	yield(get_tree().create_timer(2.0), "timeout")
+	queue_free()
+
+Used in \scene\Particles2D.gd
 
 Enjoy!

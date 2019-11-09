@@ -4,6 +4,7 @@ export var maxspeed = 300
 
 signal lives
 signal score
+signal explode
 
 func _ready():
  contact_monitor = true
@@ -11,12 +12,15 @@ func _ready():
  var WorldNode = get_node("/root/World")
  connect("score", WorldNode, "increase_score")
  connect("lives", WorldNode, "decrease_lives")
+ connect("explode", WorldNode, "emitParticle")
 
 func _physics_process(delta):
  var bodies = get_colliding_bodies()
  for body in bodies:
   if body.is_in_group("Tiles"):
    emit_signal("score",body.score)
+   emit_signal("explode",body.global_position)
+
    body.queue_free()
   if body.get_name() == "Paddle":
    pass
